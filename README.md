@@ -4,6 +4,8 @@
 
 > 本项目与 YouTube、Google、OpenAI 或 DeepSeek 没有隶属或官方合作关系。
 
+![学习清单界面](docs/images/learning-list.png)
+
 ## 功能
 
 - 分析当前 YouTube 字幕并结合前后文解释
