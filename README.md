@@ -29,11 +29,11 @@
 
 ## API Key 安全
 
-仓库不包含项目维护者的生产 API Key。
+本仓库不包含项目维护者的生产 API Key。
 
-- 体验服务的 DeepSeek Key 只保存在 Cloudflare Worker Secret 中。
-- 自备 API Key 保存在 `chrome.storage.session`，不会写入仓库，并会在浏览器会话结束后清除。
-- 不要把真实 Key 写入 `manifest.json`、`background/config.js`、`.env` 或 `.dev.vars` 后提交。
+- 体验服务使用的 DeepSeek API Key 仅保存在 Cloudflare Workers Secret 中，不会下发到扩展客户端。
+- 用户自备的 API Key 仅保存在 `chrome.storage.session` 中，不会通过 Chrome 同步，也不会写入仓库；通常会在浏览器完全退出后清除。
+- 请勿将真实 API Key 写入 `manifest.json`、`background/config.js`、`.env` 或 `.dev.vars` 后提交。
 
 ## 自行部署体验服务
 
