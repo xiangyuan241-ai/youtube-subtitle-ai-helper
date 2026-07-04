@@ -1,0 +1,19 @@
+# Local dependencies and Cloudflare state
+worker/node_modules/
+worker/.wrangler/
+
+# Local secrets
+worker/.dev.vars
+worker/.dev.vars.*
+worker/.env
+worker/.env.*
+!worker/.env.example
+
+# Generated packages and large demo media
+*.zip
+工具.mp4
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+

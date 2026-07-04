@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>学习清单 - Subtitle AI Helper</title>
+    <link rel="stylesheet" href="learning.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Learning List</p>
+          <h1>学习清单</h1>
+        </div>
+        <div class="header-actions">
+          <button id="open-review" class="primary" type="button">今日复习</button>
+          <button id="clear-all" class="danger" type="button">清空全部记录</button>
+        </div>
+      </header>
+
+      <section class="summary-grid" aria-label="学习统计">
+        <article class="summary-card">
+          <strong id="today-count">0</strong>
+          <span>今日收藏</span>
+        </article>
+        <article class="summary-card">
+          <strong id="all-count">0</strong>
+          <span>全部记录</span>
+        </article>
+        <article class="summary-card">
+          <strong id="due-count">0</strong>
+          <span>今日待复习</span>
+        </article>
+      </section>
+
+      <section class="toolbar" aria-label="筛选">
+        <div class="tabs">
+          <button class="tab is-active" data-view="today" type="button">今日学习</button>
+          <button class="tab" data-view="all" type="button">全部记录</button>
+          <button class="tab" data-view="due" type="button">今日复习</button>
+        </div>
+        <label>
+          <span class="muted">类型</span>
+          <select id="type-filter">
+            <option value="all">全部</option>
+            <option value="word">单词</option>
+            <option value="phrase">短语</option>
+            <option value="sentence">句子</option>
+          </select>
+        </label>
+      </section>
+
+      <section id="list" class="list" aria-live="polite"></section>
+      <p id="status" class="status" role="status"></p>
+    </main>
+
+    <script src="../../shared/review-scheduler.js"></script>
+    <script src="../../shared/learning-storage.js"></script>
+    <script src="list.js"></script>
+  </body>
+</html>

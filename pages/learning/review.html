@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>今日复习 - Subtitle AI Helper</title>
+    <link rel="stylesheet" href="learning.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Daily Review</p>
+          <h1>今日复习</h1>
+        </div>
+        <div class="header-actions">
+          <button id="open-list" type="button">学习清单</button>
+        </div>
+      </header>
+
+      <section id="review-root" aria-live="polite"></section>
+      <p id="status" class="status" role="status"></p>
+    </main>
+
+    <script src="../../shared/review-scheduler.js"></script>
+    <script src="../../shared/learning-storage.js"></script>
+    <script src="review.js"></script>
+  </body>
+</html>

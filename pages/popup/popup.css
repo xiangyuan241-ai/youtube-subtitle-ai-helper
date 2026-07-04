@@ -1,0 +1,100 @@
+:root {
+  color-scheme: light;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --ink: #172033;
+  --muted: #64748b;
+  --line: #dbe3ef;
+  --panel: #ffffff;
+  --soft: #f5f8fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  margin: 0;
+  background: var(--soft);
+  color: var(--ink);
+  font-family: Aptos, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.popup-shell {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 3px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stats article {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.stats span {
+  display: block;
+  color: var(--accent);
+  font-size: 26px;
+  font-weight: 850;
+}
+
+.stats p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.actions {
+  display: grid;
+  gap: 9px;
+}
+
+button {
+  min-height: 38px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+button:hover {
+  background: var(--accent-dark);
+}
+
+button.secondary {
+  border-color: var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+
+.status {
+  min-height: 18px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}

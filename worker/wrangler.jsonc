@@ -1,0 +1,39 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "youtube-subtitle-ai-helper-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-03",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "AI_TIMEOUT_MS": "30000",
+    "DEEPSEEK_API_URL": "https://api.deepseek.com/chat/completions",
+    "DEEPSEEK_MODEL": "deepseek-v4-flash",
+    "GLOBAL_DAILY_LIMIT": "100",
+    "RATE_LIMIT_PER_MINUTE": "6",
+    "TRIAL_LIMIT": "5"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "TRIALS",
+      "id": "a6c1bfc48d6e4ea0bf1e6efa20b5da1a"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "TRIAL_LIMITER",
+        "class_name": "TrialLimiter"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["TrialLimiter"]
+    }
+  ],
+  "secrets": {
+    "required": ["DEEPSEEK_API_KEY"]
+  }
+}

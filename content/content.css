@@ -1,0 +1,370 @@
+#sai-helper-root {
+  position: fixed;
+  top: 28vh;
+  right: 22px;
+  z-index: 2147483647;
+  color: #161616;
+  font-family: Aptos, "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+#sai-helper-root,
+#sai-helper-root * {
+  box-sizing: border-box;
+}
+
+html.sai-dragging,
+html.sai-dragging * {
+  user-select: none !important;
+}
+
+#sai-helper-root button {
+  font: inherit;
+}
+
+#sai-helper-root .sai-trigger {
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 50%;
+  background: #151515;
+  color: #f3f1e8;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.36), inset 0 -10px 18px rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  font-size: 21px;
+  font-weight: 800;
+  touch-action: none;
+  user-select: none;
+}
+
+#sai-helper-root .sai-trigger:hover {
+  background: #262626;
+  transform: translateY(-1px);
+}
+
+#sai-helper-root .sai-trigger:active {
+  cursor: grabbing;
+}
+
+#sai-helper-root .sai-panel {
+  position: absolute;
+  top: 68px;
+  right: 0;
+  width: min(420px, calc(100vw - 28px));
+  max-height: min(640px, calc(100vh - 96px));
+  overflow: auto;
+  border: 1px solid rgba(20, 20, 20, 0.18);
+  border-radius: 8px;
+  background: #f7f3e8;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.42);
+}
+
+#sai-helper-root.sai-anchor-left .sai-panel {
+  right: auto;
+  left: 0;
+}
+
+#sai-helper-root .sai-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 14px;
+  border-bottom: 1px solid rgba(22, 22, 22, 0.12);
+  background: rgba(247, 243, 232, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+#sai-helper-root .sai-header strong {
+  display: block;
+  color: #151515;
+  font-size: 15px;
+  font-weight: 850;
+}
+
+#sai-helper-root .sai-status {
+  display: block;
+  margin-top: 2px;
+  color: #686154;
+  font-size: 11px;
+}
+
+#sai-helper-root .sai-word-search {
+  display: grid;
+  gap: 7px;
+  padding: 12px 14px 0;
+}
+
+#sai-helper-root .sai-word-label {
+  color: #4b453d;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#sai-helper-root .sai-word-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+#sai-helper-root .sai-word-input {
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  padding: 8px 10px;
+  border: 1px solid rgba(22, 22, 22, 0.16);
+  border-radius: 6px;
+  background: #fffdf7;
+  color: #171717;
+  font: inherit;
+  font-size: 13px;
+}
+
+#sai-helper-root .sai-word-input:focus {
+  border-color: #2f7d56;
+  outline: 3px solid rgba(47, 125, 86, 0.16);
+}
+
+#sai-helper-root .sai-word-submit {
+  min-width: 54px;
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid rgba(22, 22, 22, 0.14);
+  border-radius: 6px;
+  background: #151515;
+  color: #fffaf0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#sai-helper-root .sai-word-submit:hover {
+  background: #2f7d56;
+}
+
+#sai-helper-root .sai-word-hint {
+  min-height: 16px;
+  color: #686154;
+  font-size: 11px;
+}
+
+#sai-helper-root .sai-word-hint.sai-search-error {
+  color: #8c2e25;
+}
+
+#sai-helper-root .sai-icon-button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(22, 22, 22, 0.15);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+#sai-helper-root .sai-sentence {
+  margin: 14px;
+  padding: 12px 13px;
+  border-left: 4px solid #2f7d56;
+  border-radius: 6px;
+  background: #fffdf7;
+  color: #1e1e1e;
+  white-space: pre-wrap;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+#sai-helper-root .sai-result {
+  display: grid;
+  gap: 9px;
+  padding: 0 14px 14px;
+}
+
+#sai-helper-root .sai-card {
+  padding: 12px 13px;
+  border: 1px solid rgba(22, 22, 22, 0.11);
+  border-radius: 8px;
+  background: #fffefa;
+}
+
+#sai-helper-root .sai-card-major {
+  border-color: rgba(47, 125, 86, 0.32);
+  background: #ffffff;
+  box-shadow: inset 3px 0 0 #2f7d56;
+}
+
+#sai-helper-root .sai-card h3 {
+  margin: 0 0 8px;
+  color: #587062;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+#sai-helper-root .sai-card p {
+  margin: 0;
+  color: #1f1f1f;
+  font-size: 13.5px;
+  line-height: 1.58;
+  white-space: pre-line;
+}
+
+#sai-helper-root .sai-list {
+  display: grid;
+  gap: 7px;
+}
+
+#sai-helper-root .sai-list-item {
+  padding: 8px 9px;
+  border: 1px solid rgba(22, 22, 22, 0.08);
+  border-radius: 7px;
+  background: #f8f5ed;
+}
+
+#sai-helper-root .sai-list-item:first-child {
+  padding-top: 8px;
+  border-top: 1px solid rgba(22, 22, 22, 0.08);
+}
+
+#sai-helper-root .sai-list-item strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #121212;
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+
+#sai-helper-root .sai-save-card {
+  display: grid;
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+#sai-helper-root .sai-save-button {
+  min-height: 36px;
+  border: 1px solid #2563eb;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+#sai-helper-root .sai-save-button:hover {
+  background: #1d4ed8;
+}
+
+#sai-helper-root .sai-save-button:disabled {
+  cursor: progress;
+  opacity: 0.72;
+}
+
+#sai-helper-root .sai-save-status {
+  min-height: 16px;
+  color: #4f5f73;
+  font-size: 11px;
+}
+
+#sai-helper-root .sai-save-status.sai-save-error {
+  color: #8c2e25;
+}
+
+#sai-helper-root .sai-message,
+#sai-helper-root .sai-raw {
+  margin: 0;
+  padding: 13px;
+  border: 1px dashed rgba(47, 125, 86, 0.45);
+  border-radius: 8px;
+  background: #fffefa;
+  color: #2a2a2a;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+#sai-helper-root .sai-raw-details {
+  border: 1px solid rgba(22, 22, 22, 0.1);
+  border-radius: 8px;
+  background: #fffefa;
+}
+
+#sai-helper-root .sai-raw-details summary {
+  padding: 10px 12px;
+  color: #625b50;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#sai-helper-root .sai-raw-details .sai-raw {
+  margin: 0 10px 10px;
+  max-height: 180px;
+  overflow: auto;
+  border-color: rgba(22, 22, 22, 0.12);
+  color: #4a4640;
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+#sai-helper-root .sai-error {
+  border-color: rgba(178, 64, 54, 0.5);
+  color: #8c2e25;
+}
+
+#sai-helper-root .sai-actions {
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(22, 22, 22, 0.12);
+  background: rgba(247, 243, 232, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+#sai-helper-root .sai-action {
+  min-height: 34px;
+  border: 1px solid rgba(22, 22, 22, 0.14);
+  border-radius: 6px;
+  background: #151515;
+  color: #fffaf0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+#sai-helper-root .sai-action:hover {
+  background: #2f7d56;
+}
+
+#sai-helper-root .sai-settings {
+  min-width: 56px;
+  background: #fffdf7;
+  color: #1c1c1c;
+}
+
+@media (max-width: 560px) {
+  #sai-helper-root {
+    top: auto;
+    right: 14px;
+    bottom: 86px;
+  }
+
+  #sai-helper-root .sai-panel {
+    top: auto;
+    right: 0;
+    bottom: 68px;
+    width: calc(100vw - 28px);
+    max-height: min(560px, calc(100vh - 120px));
+  }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Subtitle AI Helper 设置</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="options-shell">
+      <section class="options-panel">
+        <header>
+          <p class="eyebrow">YouTube Subtitle AI Helper</p>
+          <h1>AI 字幕解析设置</h1>
+        </header>
+
+        <form id="settings-form">
+          <fieldset class="mode-selector">
+            <legend>使用方式</legend>
+            <label class="mode-card">
+              <input name="usageMode" type="radio" value="trial" checked>
+              <span>
+                <strong>免费体验</strong>
+                <small>使用邀请码体验 5 次 AI 字幕解析</small>
+              </span>
+            </label>
+            <label class="mode-card">
+              <input name="usageMode" type="radio" value="own">
+              <span>
+                <strong>使用自己的 API Key</strong>
+                <small>不限制插件使用次数，费用由自己的 API 账户承担</small>
+              </span>
+            </label>
+          </fieldset>
+
+          <section id="trial-panel" class="mode-panel">
+            <label>
+              <span>体验邀请码</span>
+              <input id="trialCode" name="trialCode" type="text" spellcheck="false" autocomplete="off" placeholder="SAI_...">
+            </label>
+            <p class="help">每个邀请码可成功解析 5 次字幕。邀请码仅保存在当前设备。</p>
+          </section>
+
+          <section id="own-panel" class="mode-panel" hidden>
+            <label>
+              <span>API Base URL</span>
+              <input id="apiBaseUrl" name="apiBaseUrl" type="url" spellcheck="false" autocomplete="off" placeholder="https://api.deepseek.com">
+            </label>
+
+            <label>
+              <span>Model</span>
+              <input id="model" name="model" type="text" spellcheck="false" autocomplete="off" placeholder="deepseek-v4-flash">
+            </label>
+
+            <label>
+              <span>API Key</span>
+              <input id="apiKey" name="apiKey" type="password" spellcheck="false" autocomplete="off" placeholder="sk-...">
+            </label>
+            <p class="help">Key 只保存在浏览器内存中，关闭浏览器后自动清除，需要下次重新填写。</p>
+            <button id="clear-key" class="secondary danger" type="button">清除当前 Key</button>
+          </section>
+
+          <div class="actions">
+            <button type="submit">保存设置</button>
+          </div>
+        </form>
+
+        <p id="status" class="status" role="status"></p>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

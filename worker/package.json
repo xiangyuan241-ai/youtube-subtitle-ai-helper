@@ -1,0 +1,16 @@
+{
+  "name": "youtube-subtitle-ai-helper-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "configure-extension": "node scripts/configure-extension.mjs",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "invite": "node scripts/create-invite-code.mjs",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "wrangler": "^4.107.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Subtitle AI Helper",
+  "version": "0.3.0",
+  "description": "Explain selected English text or YouTube subtitles, save learning notes, and review them locally.",
+  "permissions": ["storage", "activeTab", "scripting", "alarms", "notifications"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://*.youtube.com/*",
+    "https://api.openai.com/*",
+    "https://api.deepseek.com/*",
+    "https://youtube-subtitle-ai-helper-api.xiangyuan-tools.workers.dev/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+      "js": ["shared/review-scheduler.js", "shared/learning-storage.js", "content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "pages/options/options.html",
+  "action": {
+    "default_title": "Subtitle AI Helper",
+    "default_popup": "pages/popup/popup.html"
+  }
+}
